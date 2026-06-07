@@ -1,0 +1,37 @@
+{% extends 'portfolio/base.html' %}
+{% block title %}About | M Rohitha Reddy{% endblock %}
+{% block content %}
+<div class="page-planet-section planet-about">
+    <div class="planet-hero">
+        <span class="planet-core"></span>
+        <span class="planet-ring"></span>
+        <span class="planet-label">About</span>
+    </div>
+</div>
+<section class="section about" id="about">
+    <div class="section-heading">
+        <span>About</span>
+        <h3>Undergraduate building impactful technology solutions</h3>
+    </div>
+    <div class="grid-two">
+        <div>
+            <p>{{ objective }}</p>
+            <ul class="contact-list">
+                <li><strong>Location:</strong> {{ location }}</li>
+                <li><strong>Email:</strong> <a href="mailto:{{ email }}">{{ email }}</a></li>
+                <li><strong>Phone:</strong> <a href="tel:{{ phone }}">{{ phone }}</a></li>
+                <li><strong>LinkedIn:</strong> <a href="{{ linkedin }}" target="_blank">Rohitha Reddy</a></li>
+                <li><strong>GitHub:</strong> <a href="{{ github }}" target="_blank">Roh110</a></li>
+            </ul>
+        </div>
+        <div class="highlight-card">
+            <h4>Professional snapshot</h4>
+            <ul class="highlight-list">
+                <li>AI, IoT, agriculture and sustainability-focused internship seeker</li>
+                <li>Patent published for soil regeneration and nutrient recycling</li>
+                <li>National-level demonstrator and award-winning ideathon participant</li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}

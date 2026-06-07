@@ -1,0 +1,68 @@
+{% extends 'portfolio/base.html' %}
+{% block title %}Contact | M Rohitha Reddy{% endblock %}
+{% block content %}
+<div class="page-planet-section planet-contact">
+    <div class="planet-hero">
+        <span class="planet-core"></span>
+        <span class="planet-ring"></span>
+        <span class="planet-label">Contact</span>
+    </div>
+</div>
+<section class="section contact" id="contact">
+    <div class="section-heading">
+        <span>Contact</span>
+        <h3>Ready to collaborate on AI, IoT, and sustainability projects</h3>
+    </div>
+    <div class="contact-grid">
+        <div class="contact-panel">
+            <h4>Contact details</h4>
+            <p>Reach out directly for internships, product-based company roles, or collaborations on AI, IoT, and sustainability solutions.</p>
+            <ul class="contact-details">
+                <li><strong>Name:</strong> M Rohitha Reddy</li>
+                <li><strong>Location:</strong> Hyderabad, India</li>
+                <li><strong>Email:</strong> <a href="mailto:{{ email }}">{{ email }}</a></li>
+                <li><strong>Phone:</strong> <a href="tel:{{ phone }}">{{ phone }}</a></li>
+                <li><strong>Profiles:</strong> <a href="{{ linkedin }}" target="_blank">LinkedIn</a> · <a href="{{ github }}" target="_blank">GitHub</a></li>
+            </ul>
+            <div class="contact-icons">
+                <a href="mailto:{{ email }}" class="icon-link">
+                    <span>Email</span>
+                </a>
+                <a href="tel:{{ phone }}" class="icon-link">
+                    <span>Phone</span>
+                </a>
+                <a href="{{ linkedin }}" target="_blank" class="icon-link">
+                    <span>LinkedIn</span>
+                </a>
+                <a href="{{ github }}" target="_blank" class="icon-link">
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+        <div class="contact-card">
+            {% if success_message %}
+                <div class="alert alert-success">{{ success_message }}</div>
+            {% endif %}
+            {% if error_message %}
+                <div class="alert alert-danger">{{ error_message }}</div>
+            {% endif %}
+            <form class="contact-form" action="{% url 'contact' %}" method="post">
+                {% csrf_token %}
+                <label>Name
+                    <input type="text" name="name" value="{{ form_name }}" required>
+                </label>
+                <label>Email
+                    <input type="email" name="email" value="{{ form_email }}" required>
+                </label>
+                <label>Phone
+                    <input type="tel" name="phone" value="{{ form_phone }}">
+                </label>
+                <label>Message
+                    <textarea name="message" rows="5" required>{{ form_message }}</textarea>
+                </label>
+                <button class="btn btn-primary" type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

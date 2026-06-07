@@ -1,0 +1,84 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block title %}Home | M Rohitha Reddy{% endblock %}
+{% block content %}
+<header class="hero-section" id="top">
+    <div class="space-scene solar-scene">
+        <div class="sun"></div>
+        <div class="orbit orbit-1"><div class="planet orbit-planet planet-1"></div></div>
+        <div class="orbit orbit-2"><div class="planet orbit-planet planet-2"></div></div>
+        <div class="orbit orbit-3"><div class="planet orbit-planet planet-3"></div></div>
+        <div class="orbit orbit-4"><div class="planet orbit-planet planet-4"></div></div>
+        <div class="star star-1"></div>
+        <div class="star star-2"></div>
+        <div class="star star-3"></div>
+        <div class="star star-4"></div>
+        <div class="star star-5"></div>
+        <div class="star star-6"></div>
+        <div class="star star-7"></div>
+    </div>
+    <div class="hero-content">
+        <div class="hero-profile">
+            <img src="{% static profile_image %}" alt="{{ name }}" />
+            <div>
+                <span>Hi, I'm</span>
+                <strong>{{ name }}</strong>
+                <p>{{ title }}</p>
+            </div>
+        </div>
+        <p class="eyebrow">Innovation & Internship Portfolio</p>
+        <h1>{{ name }}</h1>
+        <h2>{{ title }}</h2>
+        <p class="hero-copy">{{ tagline }}</p>
+        <p class="hero-copy">{{ summary }}</p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="{% url 'projects' %}">View Work</a>
+            <a class="btn btn-secondary" href="{% url 'contact' %}">Contact Me</a>
+        </div>
+        <div class="hero-metrics">
+            {% for item in outcomes %}
+                <div class="metric-card">
+                    <span class="metric-value">{{ item.value }}</span>
+                    <span class="metric-label">{{ item.label }}</span>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</header>
+
+<section class="section coding-experience" id="coding-experience">
+    <div class="section-heading">
+        <span>Coding Experience</span>
+        <h3>Proficiency levels for core coding skills</h3>
+    </div>
+    <div class="experience-options">
+        <div class="experience-card">
+            <h4>Basic</h4>
+            <p>Core understanding of syntax, data types, and foundational patterns.</p>
+            <div class="option-row">
+                <span class="option-pill">Basic</span>
+                <span class="option-pill active">Intermediate</span>
+                <span class="option-pill">Advanced</span>
+            </div>
+        </div>
+        <div class="experience-card">
+            <h4>Intermediate</h4>
+            <p>Practical development experience with problem solving and application building.</p>
+            <div class="option-row">
+                <span class="option-pill">Basic</span>
+                <span class="option-pill active">Intermediate</span>
+                <span class="option-pill">Advanced</span>
+            </div>
+        </div>
+        <div class="experience-card">
+            <h4>Advanced</h4>
+            <p>Ability to tackle larger problems, optimize solutions, and design structured systems.</p>
+            <div class="option-row">
+                <span class="option-pill">Basic</span>
+                <span class="option-pill active">Intermediate</span>
+                <span class="option-pill">Advanced</span>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

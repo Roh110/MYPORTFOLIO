@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="M Rohitha Reddy - CSE undergraduate passionate about AI, IoT, agriculture and sustainability." />
+    <title>{% block title %}M Rohitha Reddy | Portfolio{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}" />
+</head>
+<body>
+    <header class="page-header">
+        <div class="header-inner">
+            <a class="brand" href="{% url 'home' %}">Rohitha Reddy</a>
+            <nav class="nav-links">
+                <a href="{% url 'home' %}" class="{% if active_page == 'home' %}active-nav{% endif %}">Home</a>
+                <a href="{% url 'about' %}" class="{% if active_page == 'about' %}active-nav{% endif %}">About</a>
+                <a href="{% url 'skills' %}" class="{% if active_page == 'skills' %}active-nav{% endif %}">Skills</a>
+                <a href="{% url 'projects' %}" class="{% if active_page == 'projects' %}active-nav{% endif %}">Projects</a>
+                <a href="{% url 'education' %}" class="{% if active_page == 'education' %}active-nav{% endif %}">Education</a>
+                <a href="{% url 'certifications' %}" class="{% if active_page == 'certifications' %}active-nav{% endif %}">Certificates</a>
+                <a href="{% url 'experience' %}" class="{% if active_page == 'experience' %}active-nav{% endif %}">Experience</a>
+                <a href="{% url 'contact' %}" class="{% if active_page == 'contact' %}active-nav{% endif %}">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a class="icon-link" href="{{ linkedin }}" target="_blank" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 5.04 3.8 6.25 2.24 6.25S-.5 5.04-.5 3.5 1.13.75 2.69.75 4.98 2 4.98 3.5zM.5 8.5h4.5v14H.5v-14zm7.3 0H12v2.1h.1c.5-.9 1.8-1.8 3.6-1.8 3.8 0 4.5 2.4 4.5 5.5V22.5h-4.8v-7.5c0-1.8 0-4.1-2.5-4.1-2.5 0-2.9 2-2.9 4v7.6h-4.8v-14z"/></svg>
+                </a>
+                <a class="icon-link" href="{{ github }}" target="_blank" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1 1.7-.8 1.7-.8.9-1.7 2.4-1.2 2.9-.9.1-.7.4-1.2.8-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.3.9-.2 1.8-.3 2.7-.3s1.9.1 2.7.3c2.3-1.6 3.3-1.3 3.3-1.3.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.4-2.7 5.4-5.3 5.7.5.4.9 1.1.9 2.3v3.4c0 .3.2.7.8.6A12 12 0 0012 0z"/></svg>
+                </a>
+                <a class="btn btn-primary resume-btn" href="{% static resume_file %}" download="Rohitha_Reddy_Resume.pdf">Download Resume</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-wrapper">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>Designed around innovation, sustainability, and real-world impact.</p>
+        <p>Place: Hyderabad · Date: 19-1-2026</p>
+    </footer>
+    <script src="{% static 'portfolio/js/main.js' %}"></script>
+</body>
+</html>

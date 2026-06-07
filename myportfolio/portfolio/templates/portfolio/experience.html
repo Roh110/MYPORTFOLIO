@@ -1,0 +1,66 @@
+{% extends 'portfolio/base.html' %}
+{% block title %}Experience | M Rohitha Reddy{% endblock %}
+{% block content %}
+<div class="page-planet-section planet-experience">
+    <div class="planet-hero">
+        <span class="planet-core"></span>
+        <span class="planet-ring"></span>
+        <span class="planet-label">Experience</span>
+    </div>
+</div>
+<section class="section experience" id="experience">
+    <div class="section-heading">
+        <span>Experience</span>
+        <h3>Professional exposure</h3>
+    </div>
+    <div class="timeline">
+        {% for item in experience %}
+            <div class="timeline-item">
+                <h4>{{ item.role }}</h4>
+                <span class="meta">{{ item.company }} · {{ item.duration }}</span>
+                <p>{{ item.details }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+<section class="section achievements" id="achievements">
+    <div class="section-heading">
+        <span>Achievements</span>
+        <h3>Competitions and recognitions</h3>
+    </div>
+    <div class="list-grid">
+        {% for item in achievements %}
+            <div class="card-panel">
+                <p>{{ item }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+<section class="section extras" id="extras">
+    <div class="section-heading">
+        <span>More</span>
+        <h3>Memberships, patents, and soft skills</h3>
+    </div>
+    <div class="grid-two">
+        <div class="highlight-card">
+            <h4>Memberships & Patents</h4>
+            <ul class="highlight-list">
+                {% for item in memberships %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+                {% for patent in patents %}
+                    <li><strong>Patent Published:</strong> {{ patent.title }} ({{ patent.number }})</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="highlight-card">
+            <h4>Soft skills</h4>
+            <ul class="highlight-list">
+                {% for item in soft_skills %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}

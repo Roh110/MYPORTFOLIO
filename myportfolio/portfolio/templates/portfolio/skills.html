@@ -1,0 +1,22 @@
+{% extends 'portfolio/base.html' %}
+{% block title %}Skills | M Rohitha Reddy{% endblock %}
+{% block content %}
+<div class="page-planet-section planet-skills">
+    <div class="planet-hero">
+        <span class="planet-core"></span>
+        <span class="planet-ring"></span>
+        <span class="planet-label">Skills</span>
+    </div>
+</div>
+<section class="section skills" id="skills">
+    <div class="section-heading">
+        <span>Skills</span>
+        <h3>Technical strengths</h3>
+    </div>
+    <div class="skill-grid">
+        {% for skill in skills %}
+            <span class="skill-pill">{{ skill }}</span>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

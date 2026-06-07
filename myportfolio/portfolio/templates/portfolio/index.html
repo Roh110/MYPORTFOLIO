@@ -1,0 +1,340 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="M Rohitha Reddy - CSE undergraduate passionate about AI, IoT, agriculture and sustainability." />
+    <title>M Rohitha Reddy | Portfolio</title>
+    <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}" />
+</head>
+<body>
+    <header class="page-header">
+        <div class="header-inner">
+            <a class="brand" href="#top">Rohitha Reddy</a>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a class="icon-link" href="{{ linkedin }}" target="_blank" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 5.04 3.8 6.25 2.24 6.25S-.5 5.04-.5 3.5 1.13.75 2.69.75 4.98 2 4.98 3.5zM.5 8.5h4.5v14H.5v-14zm7.3 0H12v2.1h.1c.5-.9 1.8-1.8 3.6-1.8 3.8 0 4.5 2.4 4.5 5.5V22.5h-4.8v-7.5c0-1.8 0-4.1-2.5-4.1-2.5 0-2.9 2-2.9 4v7.6h-4.8v-14z"/></svg>
+                </a>
+                <a class="icon-link" href="{{ github }}" target="_blank" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1 1.7-.8 1.7-.8.9-1.7 2.4-1.2 2.9-.9.1-.7.4-1.2.8-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.3.9-.2 1.8-.3 2.7-.3s1.9.1 2.7.3c2.3-1.6 3.3-1.3 3.3-1.3.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.4-2.7 5.4-5.3 5.7.5.4.9 1.1.9 2.3v3.4c0 .3.2.7.8.6A12 12 0 0012 0z"/></svg>
+                </a>
+                <a class="btn btn-primary resume-btn" href="{% static resume_file %}" download="Rohitha_Reddy_Resume.pdf">Download Resume</a>
+            </div>
+        </div>
+    </header>
+
+    <header class="hero-section" id="top">
+        <div class="space-scene solar-scene">
+            <div class="sun"></div>
+            <div class="orbit orbit-1"><div class="planet orbit-planet planet-1"></div></div>
+            <div class="orbit orbit-2"><div class="planet orbit-planet planet-2"></div></div>
+            <div class="orbit orbit-3"><div class="planet orbit-planet planet-3"></div></div>
+            <div class="orbit orbit-4"><div class="planet orbit-planet planet-4"></div></div>
+            <div class="star star-1"></div>
+            <div class="star star-2"></div>
+            <div class="star star-3"></div>
+            <div class="star star-4"></div>
+            <div class="star star-5"></div>
+            <div class="star star-6"></div>
+            <div class="star star-7"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-profile">
+                <img src="{% static profile_image %}" alt="{{ name }}" />
+                <div>
+                    <span>Hi, I'm</span>
+                    <strong>{{ name }}</strong>
+                    <p>{{ title }}</p>
+                </div>
+            </div>
+            <p class="eyebrow">Innovation & Internship Portfolio</p>
+            <h1>{{ name }}</h1>
+            <h2>{{ title }}</h2>
+            <p class="hero-copy">{{ tagline }}</p>
+            <p class="hero-copy">{{ summary }}</p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="#projects">View Work</a>
+                <a class="btn btn-secondary" href="#contact">Contact Me</a>
+            </div>
+            <div class="hero-metrics">
+                {% for item in outcomes %}
+                    <div class="metric-card">
+                        <span class="metric-value">{{ item.value }}</span>
+                        <span class="metric-label">{{ item.label }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </header>
+
+    <main class="page-wrapper">
+        <section class="section about" id="about">
+            <div class="section-heading">
+                <span>About</span>
+                <h3>Undergraduate building impactful technology solutions</h3>
+            </div>
+            <div class="grid-two">
+                <div>
+                    <p>{{ objective }}</p>
+                    <ul class="contact-list">
+                        <li><strong>Location:</strong> {{ location }}</li>
+                        <li><strong>Email:</strong> <a href="mailto:{{ email }}">{{ email }}</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:{{ phone }}">{{ phone }}</a></li>
+                        <li><strong>LinkedIn:</strong> <a href="{{ linkedin }}" target="_blank">Rohitha Reddy</a></li>
+                        <li><strong>GitHub:</strong> <a href="{{ github }}" target="_blank">Roh110</a></li>
+                    </ul>
+                </div>
+                <div class="highlight-card">
+                    <h4>Professional snapshot</h4>
+                    <ul class="highlight-list">
+                        <li>AI, IoT, agriculture and sustainability-focused internship seeker</li>
+                        <li>Patent published for soil regeneration and nutrient recycling</li>
+                        <li>National-level demonstrator and award-winning ideathon participant</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section skills" id="skills">
+            <div class="section-heading">
+                <span>Skills</span>
+                <h3>Technical strengths</h3>
+            </div>
+            <div class="skill-grid">
+                {% for skill in skills %}
+                    <span class="skill-pill">{{ skill }}</span>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="section coding-experience" id="coding-experience">
+            <div class="section-heading">
+                <span>Coding Experience</span>
+                <h3>Proficiency levels for core coding skills</h3>
+            </div>
+            <div class="experience-options">
+                <div class="experience-card">
+                    <h4>Basic</h4>
+                    <p>Core understanding of syntax, data types, and foundational patterns.</p>
+                    <div class="option-row">
+                        <span class="option-pill">Basic</span>
+                        <span class="option-pill active">Intermediate</span>
+                        <span class="option-pill">Advanced</span>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <h4>Intermediate</h4>
+                    <p>Practical development experience with problem solving and application building.</p>
+                    <div class="option-row">
+                        <span class="option-pill">Basic</span>
+                        <span class="option-pill active">Intermediate</span>
+                        <span class="option-pill">Advanced</span>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <h4>Advanced</h4>
+                    <p>Ability to tackle larger problems, optimize solutions, and design structured systems.</p>
+                    <div class="option-row">
+                        <span class="option-pill">Basic</span>
+                        <span class="option-pill active">Intermediate</span>
+                        <span class="option-pill">Advanced</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section projects" id="projects">
+            <div class="section-heading">
+                <span>Projects</span>
+                <h3>Practical work and innovation</h3>
+            </div>
+            <div class="project-grid">
+                {% for project in projects %}
+                    <article class="project-card">
+                        <div class="project-card-header">
+                            <h4>{{ project.name }}</h4>
+                            <span class="project-status">{{ project.status }}</span>
+                        </div>
+                        <p>{{ project.description }}</p>
+                        <div class="tag-row">
+                            {% for tag in project.tags %}
+                                <span class="tag">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="section education" id="education">
+            <div class="section-heading">
+                <span>Education</span>
+                <h3>Academic profile</h3>
+            </div>
+            <div class="education-grid">
+                {% for item in education %}
+                    <div class="education-card">
+                        <h4>{{ item.degree }}</h4>
+                        <p>{{ item.institution }}</p>
+                        <span class="meta">{{ item.year }}</span>
+                        <p>{{ item.details }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="section certifications" id="certifications">
+            <div class="section-heading">
+                <span>Certifications</span>
+                <h3>Recognized learning and industry credentials</h3>
+            </div>
+            <div class="certificate-grid">
+                {% for cert in certifications %}
+                    <article class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="{% static cert.image %}" alt="{{ cert.title }} certificate" />
+                        </div>
+                        <div class="certificate-body">
+                            <div class="certificate-badge">{{ forloop.counter }}</div>
+                            <h4>{{ cert.title }}</h4>
+                            <p class="issuer">{{ cert.issuer }}</p>
+                            <p>{{ cert.detail }}</p>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="section achievements" id="achievements">
+            <div class="section-heading">
+                <span>Achievements</span>
+                <h3>Competitions and recognitions</h3>
+            </div>
+            <div class="list-grid">
+                {% for item in achievements %}
+                    <div class="card-panel">
+                        <p>{{ item }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="section experience" id="experience">
+            <div class="section-heading">
+                <span>Experience</span>
+                <h3>Professional exposure</h3>
+            </div>
+            <div class="timeline">
+                {% for item in experience %}
+                    <div class="timeline-item">
+                        <h4>{{ item.role }}</h4>
+                        <span class="meta">{{ item.company }} · {{ item.duration }}</span>
+                        <p>{{ item.details }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="section extras" id="extras">
+            <div class="section-heading">
+                <span>More</span>
+                <h3>Memberships, patents, and soft skills</h3>
+            </div>
+            <div class="grid-two">
+                <div class="highlight-card">
+                    <h4>Memberships & Patents</h4>
+                    <ul class="highlight-list">
+                        {% for item in memberships %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                        {% for patent in patents %}
+                            <li><strong>Patent Published:</strong> {{ patent.title }} ({{ patent.number }})</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="highlight-card">
+                    <h4>Soft skills</h4>
+                    <ul class="highlight-list">
+                        {% for item in soft_skills %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact" id="contact">
+            <div class="section-heading">
+                <span>Contact</span>
+                <h3>Ready to collaborate on AI, IoT, and sustainability projects</h3>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-panel">
+                    <h4>Contact details</h4>
+                    <p>Reach out directly for internships, product-based company roles, or collaborations on AI, IoT, and sustainability solutions.</p>
+                    <ul class="contact-details">
+                        <li><strong>Name:</strong> M Rohitha Reddy</li>
+                        <li><strong>Location:</strong> Hyderabad, India</li>
+                        <li><strong>Email:</strong> <a href="mailto:{{ email }}">{{ email }}</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:{{ phone }}">{{ phone }}</a></li>
+                        <li><strong>Profiles:</strong> <a href="{{ linkedin }}" target="_blank">LinkedIn</a> · <a href="{{ github }}" target="_blank">GitHub</a></li>
+                    </ul>
+                    <div class="contact-icons">
+                        <a href="mailto:{{ email }}" class="icon-link">
+                            <span>Email</span>
+                        </a>
+                        <a href="tel:{{ phone }}" class="icon-link">
+                            <span>Phone</span>
+                        </a>
+                        <a href="{{ linkedin }}" target="_blank" class="icon-link">
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="{{ github }}" target="_blank" class="icon-link">
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    {% if success_message %}
+                        <div class="alert alert-success">{{ success_message }}</div>
+                    {% endif %}
+                    {% if error_message %}
+                        <div class="alert alert-danger">{{ error_message }}</div>
+                    {% endif %}
+                    <form class="contact-form" action="{% url 'contact' %}" method="post">
+                        {% csrf_token %}
+                        <label>Name
+                            <input type="text" name="name" value="{{ form_name }}" required>
+                        </label>
+                        <label>Email
+                            <input type="email" name="email" value="{{ form_email }}" required>
+                        </label>
+                        <label>Phone
+                            <input type="tel" name="phone" value="{{ form_phone }}">
+                        </label>
+                        <label>Message
+                            <textarea name="message" rows="5" required>{{ form_message }}</textarea>
+                        </label>
+                        <button class="btn btn-primary" type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Designed around innovation, sustainability, and real-world impact.</p>
+        <p>Place: Hyderabad · Date: 19-1-2026</p>
+    </footer>
+
+    <script src="{% static 'portfolio/js/main.js' %}"></script>
+</body>
+</html>
